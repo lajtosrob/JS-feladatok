@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HunDate</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener("load", function () {
+            const date = new Date();
+            year = date.getFullYear();
+            month = date.getMonth();
+            var monthName;
+            switch (month) {
+                case 1:
+                    monthName = "január";
+                    break;
+                case 2:
+                    monthName = "február";
+                    break;
+                case 3:
+                    monthName = "március";
+                    break;
+                case 4:
+                    monthName = "április";
+                    break;
+                case 5:
+                    monthName = "május";
+                    break;
+                case 6:
+                    monthName = "junius";
+                    break;
+                case 7:
+                    monthName = "július";
+                    break;
+                case 8:
+                    monthName = "augusztus";
+                    break;
+                case 9:
+                    monthName = "szeptember";
+                    break;
+                case 10:
+                    monthName = "október";
+                    break;
+                case 11:
+                    monthName = "november";
+                    break;
+                case 12:
+                    monthName = "december";
+                    break;
+            }
+            day = date.getDate();
+            if (day < 10) {
+                day = "0" + day;
+            }
+            const fullYear = year + ". " + monthName + " " + day + ".";
+            document.getElementById("hunDate").innerHTML = fullYear;
+        })
+    </script>
+    <div id="hunDate"></div>
+</body>
+
+</html>

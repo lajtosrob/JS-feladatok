@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let programVege = false;
+        let randomNumber = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+        while(!programVege) {
+        let bekertString = prompt("Adjon meg egy számot 1-20");
+        let bekertSzam = parseInt(bekertString);
+        if(bekertString == null)
+        {
+            programVege = true;
+            alert('Game Over.');
+        }
+        else if(isNaN(bekertString)) {
+            alert('Ne szórakozzál! Ez nem szám: ' + bekertString);
+        } 
+        else if(bekertString == "") {
+            alert("Ne húzzál fel agyilag! Nem írtál be semmit. ");
+        }
+        else if(bekertSzam <= 0 || bekertSzam > 20) {
+            alert("A " + bekertString + " szerinted 1 és 20 között van? \nA francért adsz meg tartományon kivül! \nÚjrapróbálkozhatsz!");
+        }
+        else if(bekertSzam != randomNumber)
+        {
+            alert("Rossz tipp. Újrapróbálkozhatsz. " + randomNumber);
+        }
+        else {
+            alert("Végre eltaláltad. Ez nehéz szülés volt. Game over. ");
+            programVege = true;
+
+        }
+        }
+
+    </script>
+</body>
+</html>

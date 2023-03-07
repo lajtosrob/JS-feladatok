@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        window.addEventListener("load", function () {
+            let bekertString = prompt("Aggyál meg a tetszőleges szöveget de izibe! ");
+            //let revString = reverseString(bekertString);
+
+            //let kiirtSzoveg = bekertString + " " + revString;
+            let reverString = reverseString(bekertString);
+            //document.getElementById("palindrom").innerText = reverString;
+            document.getElementById("palindrom").innerText = "Hiba";
+        })
+
+        function reverseString(item) {
+            let revString = "";
+            for(let index = item.lenght-1; index > 0; index--) {
+                revString+= item[index];
+            }
+            return revString;
+        }
+    </script>
+    <div id="palindrom"></div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener("load", function () {
+            var d = new Date();
+            var hour;
+            var minute;
+            var seconds;
+
+            function waitOneSecond() {
+                setTimeout(displayTime, 1000)
+                getPunctualTime();
+            }
+
+            function getPunctualTime() {
+                d = new Date();
+                let time = d.getTime();
+
+            }
+
+            function displayTime() {
+
+                hour = d.getHours();
+                if (hour < 10) {
+                    hour = "0" + hour;
+                }
+                minute = d.getMinutes();
+                if (minute < 10) {
+                    minute = "0" + minute;
+                }
+                seconds = d.getSeconds();
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                /* const fullYear =d.getFullYear();
+                const minute = 1000 * 60;
+                const hour = minute * 60;
+                const day = hour * 24;
+                const month = day * 31;
+                const year = day * 365;
+                const passedSeconds = (fullYear - 1970) * year;
+    
+                let recentSeconds = time - passedSeconds;
+                let recentMonth = parseInt(recentSeconds/month);
+                recentSeconds = recentSeconds%month; */
+
+                document.getElementById("punctual-time").innerText = hour + ":" + minute + ":" + seconds;
+
+            }
+
+waitOneSecond();
+        });
+
+    </script>
+    <div id="punctual-time"></div>
+</body>
+
+</html>
